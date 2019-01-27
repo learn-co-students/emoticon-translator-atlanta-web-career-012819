@@ -12,12 +12,19 @@ end
 
 def get_japanese_emoticon(path, emoji)
   face_hash = load_library(path)
-  face_hash[get_emoticon][emoji]
+  if face_hash['get_emoticon'].has_key?(emoji)
+    face_hash['get_emoticon'][emoji]
+  else
+    "Sorry, that emoticon was not found"
+  end
 
 end
 
 def get_english_meaning(path,emoji)
   face_hash = load_library(path)
-  face_hash['get_meaning'][emoji]
-  # code goes here
+  if face_hash['get_meaning'].has_key?(emoji)
+    face_hash['get_meaning'][emoji]
+  else
+    "Sorry, that emoticon was not found"
+  end
 end
