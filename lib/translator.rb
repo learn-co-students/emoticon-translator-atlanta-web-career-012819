@@ -10,10 +10,14 @@ def load_library(file_path)
   lookup_hash
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(path, emoji)
+  face_hash = load_library(path)
+  face_hash[get_emoticon][emoji]
+
 end
 
-def get_english_meaning
+def get_english_meaning(path,emoji)
+  face_hash = load_library(path)
+  face_hash['get_meaning'][emoji]
   # code goes here
 end
